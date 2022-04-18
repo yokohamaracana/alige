@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='information.js'></script>
+</head>
+
+<body>
+    <form>
+        <h1 style="text-align: center;">Update personal information</h1>
+        <table style="margin: auto;">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  Phone number
+                </td>
+                <td>
+                    <input type="txt" id="phone number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <input type="text" id="address">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>Male
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Favorite coffee
+                </td>
+                <td>
+                    <input type="checkbox" value="Latte">Latte
+                    <input type="checkbox" value="Mocha ">Mocha 
+                    <input type="checkbox" value="Cappuccino">Cappuccino
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input onclick="send()" type="button" value="Submit">
+                </td>
+                <td>
+                    <input onclick="resetForm()" type="button" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+</html>

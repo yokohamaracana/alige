@@ -1,0 +1,89 @@
+Table Role{
+  id int [pk]
+  name varchar
+  description varchar
+  created_at datetime
+}
+Table User{
+  id int [pk]
+  fullname varchar 
+  email varchar
+  phone_number varchar
+  address varchar
+  password varchar
+ 
+  created_at datetime
+  updated_at datetime
+}
+Table Admin{
+  id int [pk]
+  role_id varchar
+  name varchar
+  email varchar
+  password varchar
+  phone varchar
+  created_at datetime
+  updated_at datetime
+  
+}
+
+Table Category{
+  id int [pk] 
+  name varchar
+  created_at tinyint
+  updated_at datetime
+}
+Table Product{
+  id int [pk]
+  category_id int
+  name varchar
+  price int
+  content varchar
+  supplier varchar
+  buyed int
+  image varchar
+  status tinyint
+  created_at int
+  
+}
+Table Transaction{
+id int [pk]
+user_id int
+name varchar
+email int
+address varchar
+phone varchar
+totalmoney int
+status tinyint
+created_at datetime
+  
+}
+Table Order{
+  id int [pk]
+  product_id int
+  user_id int
+  name varchar
+  price int
+  totalmoney int
+  image varchar
+  transaction_id tinyint
+  created_at datetime
+}
+
+
+
+
+
+Ref: "Category"."id" < "Product"."category_id"
+
+Ref: "Product"."id" > "Order"."product_id"
+
+Ref: "Transaction"."id" < "Order"."transaction_id"
+
+Ref: "Role"."id" < "Admin"."role_id"
+
+
+
+Ref: "User"."id" < "Order"."user_id"
+
+Ref: "User"."id" < "Transaction"."user_id"

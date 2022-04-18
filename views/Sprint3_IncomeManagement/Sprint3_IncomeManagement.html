@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <meta>
+        <title>BieuDoThuNhap</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+        <style type="text/css">
+      
+          html,
+          body,
+          #container {
+            width: 90%;
+            height: 95%;
+            margin: 10;
+            padding: 10;
+          }
+        
+      </style>
+
+<body>
+  
+  <div id="container"></div>
+  
+
+  <script>
+
+    anychart.onDocumentReady(function () {
+      // create column chart
+      var chart = anychart.column();
+
+      // // turn on chart animation
+      chart.animation(true);
+
+      // set chart title text settings
+      chart.title('Monthly Income Management Chart');
+
+      // create area series with passed data
+      var series = chart.column
+      (
+       
+      [
+        ['1/4', '900000'],
+        ['2/4', '94190'],
+        ['3/4', '102610'],
+        ['4/4', '110430'],
+        ['5/5', '128000'],
+        ['6/4', '650000'],
+        ['7/4', '170670'],
+        ['8/4', '213210'],
+        ['9/4', '1305000'],
+        ['10/4', '900000'],
+        ['11/4', '94190'],
+        ['12/4', '102610'],
+        ['13/4', '110430'],
+        ['14/5', '128000'],
+        ['15/4', '650000'],
+        ['16/4', '170670'],
+        ['17/4', '213210'],
+        ['18/4', '1205000'],
+        ['19/4', '1405000'],
+        ['20/4', '900000'],
+        ['21/4', '94190'],
+        ['22/4', '102610'],
+        ['23/4', '110430'],
+        ['24/5', '128000'],
+        ['25/4', '650000'],
+        ['26/4', '170670'],
+        ['27/4', '213210'],
+        ['28/4', '1205000'],
+        ['29/4', '1005000'],
+        ['30/4', '905000'],
+      ]);
+
+      // set series tooltip settings
+      series.tooltip().titleFormat('{%X}');
+
+      series
+        .tooltip()
+        .position('center-top')
+        .anchor('center-bottom')
+        .offsetX(0)
+        .offsetY(5)
+        .format('VND{%Value}{groupsSeparator: }');
+
+      // set scale minimum
+      chart.yScale().minimum(0);
+
+      // set yAxis labels formatter
+      chart.yAxis().labels().format('VND{%Value}{groupsSeparator: }');
+
+      // tooltips position and interactivity settings
+      chart.tooltip().positionMode('point');
+      chart.interactivity().hoverMode('by-x');
+
+      // axes titles
+      chart.xAxis().title('Tháng 4');
+      chart.yAxis().title('Số tiền');
+
+      // set container id for the chart
+      chart.container('container');
+
+      // initiate chart drawing
+      chart.draw();
+    });
+  
+</script>
+</body>
+</html>
